@@ -14,6 +14,11 @@ app.extend({
     this.indexView = new IndexView();
 
     document.body.appendChild(this.indexView.render().el);
+
+    // Set WAI-ARIA properties on the body tag to help assistive tech
+    // understand the meaning of the iframe document.
+    // 
+    document.body.setAttribute('role', 'application');
   },
 
   initializeWebChannelEventRecorder () {
